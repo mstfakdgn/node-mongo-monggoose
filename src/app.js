@@ -1,4 +1,7 @@
-const app = require("./app")
+const express = require("express");
+const userRouter = require("./routers/user.js");
+const taskRouter = require("./routers/task.js");
+const multer = require("multer");
 
 const app = express();
 const port = process.env.PORT;
@@ -46,6 +49,9 @@ app.post(
   }
 );
 
-app.listen(port, () => {
-  console.log("Server is up on port" + port);
-});
+// app.listen(port, () => {
+//   console.log("Server is up on port" + port);
+// });
+
+
+module.exports = app
